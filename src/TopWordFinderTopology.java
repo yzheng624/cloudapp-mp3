@@ -19,9 +19,6 @@ public class TopWordFinderTopology {
 
   public static void main(String[] args) throws Exception {
 
-    if (args.length < 1) {
-      throw new IllegalArgumentException("the number of arguments is not correct");
-    }
 
     TopologyBuilder builder = new TopologyBuilder();
 
