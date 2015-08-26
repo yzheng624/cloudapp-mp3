@@ -13,7 +13,7 @@ import backtype.storm.tuple.Values;
 /**
  * This topology reads a file and counts the words in that file, then finds the top N words.
  */
-public class TopWordFinderTopology {
+public class TopWordFinderTopologyPartD {
 
   private static final int N = 10;
 
