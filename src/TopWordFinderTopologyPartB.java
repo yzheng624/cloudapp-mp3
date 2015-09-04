@@ -32,8 +32,7 @@ public class TopWordFinderTopologyPartB {
 
     NOTE:make sure when connecting components together, using the functions setBolt(name,…) and setSpout(name,…),
     you use the following names for each component:
-
-	FileReaderSpout -> "spout"
+    FileReaderSpout -> "spout"
     SplitSentenceBolt -> "split"
     WordCountBolt -> "count"
 
