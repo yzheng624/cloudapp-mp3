@@ -30,9 +30,15 @@ public class TopWordFinderTopologyPartA {
     ----------------------TODO-----------------------
     Task: wire up the topology
 
+    NOTE:make sure when connecting components together, using the functions setBolt(name,…) and setSpout(name,…),
+    you use the following names for each component:
+
+	RandomSentanceSpout -> "spout"
+    SplitSentenceBolt -> "split"
+    WordCountBolt -> "count"
+
 
     ------------------------------------------------- */
-
 
 
     config.setMaxTaskParallelism(3);
@@ -41,7 +47,7 @@ public class TopWordFinderTopologyPartA {
     cluster.submitTopology("word-count", config, builder.createTopology());
 
     //wait till the file is read completely
-    Thread.sleep(10 * 60 * 1000);
+    Thread.sleep(10 * 1000);
 
     cluster.shutdown();
   }

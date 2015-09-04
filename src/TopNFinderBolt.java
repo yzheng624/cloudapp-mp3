@@ -14,7 +14,7 @@ public class TopNFinderBolt extends BaseBasicBolt {
   private HashMap<String, Integer> currentTopWords = new HashMap<String, Integer>();
   private int N;
 
-  private long intervalToReport = 200;
+  private long intervalToReport = 20;
   private long lastReportTime = System.currentTimeMillis();
 
   public TopNFinderBolt(int N) {
@@ -40,12 +40,8 @@ public class TopNFinderBolt extends BaseBasicBolt {
 
   @Override
   public void declareOutputFields(OutputFieldsDeclarer declarer) {
-   /*
-    ----------------------TODO-----------------------
-    Task: define the declarer
 
-
-    ------------------------------------------------- */
+     declarer.declare(new Fields("top-N"));
 
   }
 

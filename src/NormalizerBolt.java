@@ -16,7 +16,7 @@ public class NormalizerBolt extends BaseBasicBolt {
       "of", "to", "in", "am", "is", "are", "at", "not", "that", "have", "i", "it",
       "for", "on", "with", "he", "she", "as", "you", "do", "this", "but", "his",
       "by", "from", "they", "we", "her", "or", "will", "my", "one", "all", "s", "if",
-      "any", "our", "may", "your", "these");
+      "any", "our", "may", "your", "these", "d" , " ", "me" , "so" , "what" , "him" );
 
   @Override
   public void execute(Tuple tuple, BasicOutputCollector collector) {
@@ -29,17 +29,13 @@ public class NormalizerBolt extends BaseBasicBolt {
 
     ------------------------------------------------- */
 
+
   }
 
   @Override
   public void declareOutputFields(OutputFieldsDeclarer declarer) {
 
-    /*
-    ----------------------TODO-----------------------
-    Task: define the declarer
-
-
-    ------------------------------------------------- */
+    declarer.declare(new Fields("word"));
 
   }
 }

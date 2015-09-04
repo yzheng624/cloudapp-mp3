@@ -16,6 +16,7 @@ public class FileReaderSpout implements IRichSpout {
   private SpoutOutputCollector _collector;
   private TopologyContext context;
 
+
   @Override
   public void open(Map conf, TopologyContext context,
                    SpoutOutputCollector collector) {
@@ -37,8 +38,8 @@ public class FileReaderSpout implements IRichSpout {
      /*
     ----------------------TODO-----------------------
     Task:
-    1. read the next line and emmit a tuple for it
-    2. don't forget to add a small sleep
+    1. read the next line and emit a tuple for it
+    2. don't forget to sleep when the file is entirely read to prevent a busy-loop
 
     ------------------------------------------------- */
 
@@ -48,12 +49,7 @@ public class FileReaderSpout implements IRichSpout {
   @Override
   public void declareOutputFields(OutputFieldsDeclarer declarer) {
 
-    /*
-    ----------------------TODO-----------------------
-    Task: define the declarer
-
-
-    ------------------------------------------------- */
+    declarer.declare(new Fields("word"));
 
   }
 
@@ -65,6 +61,7 @@ public class FileReaderSpout implements IRichSpout {
 
 
     ------------------------------------------------- */
+
   }
 
 
