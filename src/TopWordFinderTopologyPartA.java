@@ -15,6 +15,7 @@ import backtype.storm.tuple.Values;
  */
 public class TopWordFinderTopologyPartA {
 
+  public static void main(String[] args) throws Exception {
 
     TopologyBuilder builder = new TopologyBuilder();
 
