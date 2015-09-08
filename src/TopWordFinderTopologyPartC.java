@@ -11,11 +11,10 @@ import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 
 /**
- * This topology reads a file and counts the words in that file, then finds the top N words.
+ * This topology reads a file, splits the senteces into words, normalizes the words such that all words are
+ * lower case and common words are removed, and then count the number of words.
  */
 public class TopWordFinderTopologyPartC {
-
-  private static final int N = 10;
 
   public static void main(String[] args) throws Exception {
 
@@ -48,7 +47,7 @@ public class TopWordFinderTopologyPartC {
     LocalCluster cluster = new LocalCluster();
     cluster.submitTopology("word-count", config, builder.createTopology());
 
-    //wait till the file is read completely
+    //wait for 2 minutes then kill the job
     Thread.sleep(2 * 60 * 1000);
 
     cluster.shutdown();
