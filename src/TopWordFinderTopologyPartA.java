@@ -42,7 +42,7 @@ public class TopWordFinderTopologyPartA {
     LocalCluster cluster = new LocalCluster();
     cluster.submitTopology("word-count", config, builder.createTopology());
 
-    //wait for 60 seconds and then kill the topoly
+    //wait for 60 seconds and then kill the topology
     Thread.sleep(60 * 1000);
 
     cluster.shutdown();
